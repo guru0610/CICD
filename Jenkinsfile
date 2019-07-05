@@ -16,7 +16,7 @@ try {
       withCredentials([azureServicePrincipal('azurecred')]) 
        {
         ansiColor('xterm') {
-         powershell 'terraform init'
+         'powershell terraform init'
         }
       }
     }
