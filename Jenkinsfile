@@ -13,7 +13,7 @@ try {
   stage('init') {
     node {
 
-      withCredentials([azureServicePrincipal('credentials_id')]) {
+      withCredentials([azureServicePrincipal('credentials_id')]) 
        {
         ansiColor('xterm') {
           sh 'terraform init'
@@ -25,7 +25,8 @@ try {
   // Run terraform plan
   stage('plan') {
     node {
-      withCredentials([azureServicePrincipal('credentials_id')]) { {
+      withCredentials([azureServicePrincipal('credentials_id')]) 
+        {
         ansiColor('xterm') {
           sh 'terraform plan'
         }
@@ -38,7 +39,7 @@ try {
     // Run terraform apply
     stage('apply') {
       node {
-        withCredentials([azureServicePrincipal('credentials_id')]) { {
+        withCredentials([azureServicePrincipal('credentials_id')]) { 
           ansiColor('xterm') {
             sh 'terraform apply -auto-approve'
           }
@@ -49,7 +50,7 @@ try {
     // Run terraform show
     stage('show') {
       node {
-        withCredentials([azureServicePrincipal('credentials_id')]) { {
+        withCredentials([azureServicePrincipal('credentials_id')]) { 
           ansiColor('xterm') {
             sh 'terraform show'
           }
