@@ -16,7 +16,7 @@ try {
       withCredentials([azureServicePrincipal('azurecred')]) 
        {
         ansiColor('xterm') {
-          powershell 'terraform init'
+         'terraform init'
         }
       }
     }
@@ -28,7 +28,7 @@ try {
       withCredentials([azureServicePrincipal('azurecred')]) 
         {
         ansiColor('xterm') {
-          powershell 'terraform plan'
+          'terraform plan'
         }
       }
     }
@@ -41,7 +41,7 @@ try {
       node {
         withCredentials([azureServicePrincipal('azurecred')]) { 
           ansiColor('xterm') {
-            powershell 'terraform apply -auto-approve'
+             'terraform apply -auto-approve'
           }
         }
       }
@@ -52,7 +52,7 @@ try {
       node {
         withCredentials([azureServicePrincipal('azurecred')]) { 
           ansiColor('xterm') {
-            powershell 'terraform show'
+             'terraform show'
           }
         }
       }
