@@ -19,7 +19,7 @@ try {
                                     tenantIdVariable: 'TENANT_ID')]) 
         {
         ansiColor('xterm') {
-    sh 'az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID'
+    sh 'service jenkins status'
 
         }
       }
