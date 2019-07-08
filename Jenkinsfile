@@ -16,8 +16,9 @@ try {
   withCredentials([azureServicePrincipal('azurecred')]) 
                                             {
         ansiColor('xterm') {
-         $a='terraform init'
-          write-host $a
+        '$a=terraform init'
+          '$a'
+        
         }
       }
     }
