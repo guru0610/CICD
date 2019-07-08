@@ -19,7 +19,7 @@ try {
                                     tenantIdVariable: 'TENANT_ID')]) 
         {
         ansiColor('xterm') {
-    sh 'service jenkins status'
+    'sh terraform init'
 
         }
       }
