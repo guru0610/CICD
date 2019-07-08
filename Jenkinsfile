@@ -20,7 +20,8 @@ try {
                                     tenantIdVariable: 'TENANT_ID')]) 
                                             {
         ansiColor('xterm') {
-        'C:\Program Files (x86)\Jenkins\workspace\Terraform_master\terraform init'
+        'cd "C:\Program Files (x86)\Jenkins\workspace\Terraform_master"'
+          'terraform init'
                 
         }
       }
