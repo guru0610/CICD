@@ -20,7 +20,7 @@ try {
                                     tenantIdVariable: 'TENANT_ID')]) 
                                             {
         ansiColor('xterm') {
-      'C:/Terraform_master/terraform init'
+      'sh terraform init'
               
         }
       }
@@ -37,7 +37,7 @@ try {
                                     tenantIdVariable: 'TENANT_ID')]) 
         {
         ansiColor('xterm') {
-      'C:/Terraform_master/terraform plan'
+      'sh terraform plan'
         }
       }
     }
@@ -54,7 +54,7 @@ try {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')])  { 
           ansiColor('xterm') {
-            'C:/Terraform_master/terraform apply -auto-approve'
+            'sh terraform apply -auto-approve'
           }
         }
       }
@@ -69,7 +69,7 @@ try {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')])  { 
           ansiColor('xterm') {
-            'C:/Terraform_master/terraform show'
+            'sh terraform show'
           }
         }
       }
