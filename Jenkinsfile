@@ -36,7 +36,7 @@ try {
                                     tenantIdVariable: 'TENANT_ID')]) 
         {
         ansiColor('xterm') {
-      'sh terraform plan'
+      sh 'terraform plan'
         }
       }
     }
@@ -53,7 +53,7 @@ try {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')])  { 
           ansiColor('xterm') {
-            'sh terraform apply -auto-approve'
+            sh 'terraform apply -auto-approve'
           }
         }
       }
@@ -68,7 +68,7 @@ try {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')])  { 
           ansiColor('xterm') {
-            'sh terraform show'
+            sh 'terraform show'
           }
         }
       }
