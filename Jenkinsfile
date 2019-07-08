@@ -12,13 +12,20 @@ try {
   // Run terraform init
   stage('init') {
     node {
+    withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
+                                    subscriptionIdVariable: 'SUBS_ID',
+                                    clientIdVariable: 'CLIENT_ID',
+                                    clientSecretVariable: 'CLIENT_SECRET',
+                                    tenantIdVariable: 'TENANT_ID')]) 
+        {
+        ansiColor('xterm') {
+    sh 'az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID'
 
-
-      'sh terraform init'
-              
         }
       }
- 
+    }
+  }
+
 
   // Run terraform plan
   stage('plan') {
