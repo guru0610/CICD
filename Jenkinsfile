@@ -20,9 +20,8 @@ try {
                                     tenantIdVariable: 'TENANT_ID')]) 
                                             {
         ansiColor('xterm') {
-        'cd "C:\Terraform_master\"'
-          'terraform init'
-                
+      'powershell cd C:\Terraform_master\ ;terraform init'
+              
         }
       }
     }
