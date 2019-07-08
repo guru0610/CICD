@@ -18,9 +18,8 @@ try {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')]) 
         {
-        ansiColor('xterm') {
-    sh 'terraform init'
-        }
+           sh 'terraform init'
+        
         }
     }
   }
@@ -35,10 +34,8 @@ try {
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')]) 
         {
-        ansiColor('xterm') {
-      sh 'terraform plan'
-        }
-      }
+            sh 'terraform plan'
+          }
     }
   }
 
@@ -52,9 +49,8 @@ try {
                                     clientIdVariable: 'CLIENT_ID',
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')])  { 
-          ansiColor('xterm') {
-            sh 'terraform apply -auto-approve'
-          }
+                      sh 'terraform apply -auto-approve'
+          
         }
       }
     }
@@ -67,10 +63,8 @@ try {
                                     clientIdVariable: 'CLIENT_ID',
                                     clientSecretVariable: 'CLIENT_SECRET',
                                     tenantIdVariable: 'TENANT_ID')])  { 
-          ansiColor('xterm') {
-            sh 'terraform show'
-          }
-        }
+                    sh 'terraform show'
+                  }
       }
     }
   }
