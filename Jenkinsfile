@@ -30,7 +30,11 @@ try {
   // Run terraform plan
   stage('plan') {
     node {
-      withCredentials([azureServicePrincipal('azurecred')]) 
+    withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
+                                    subscriptionIdVariable: 'SUBS_ID',
+                                    clientIdVariable: 'CLIENT_ID',
+                                    clientSecretVariable: 'CLIENT_SECRET',
+                                    tenantIdVariable: 'TENANT_ID')]) 
         {
         ansiColor('xterm') {
           'terraform plan'
@@ -44,7 +48,11 @@ try {
     // Run terraform apply
     stage('apply') {
       node {
-        withCredentials([azureServicePrincipal('azurecred')]) { 
+       withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
+                                    subscriptionIdVariable: 'SUBS_ID',
+                                    clientIdVariable: 'CLIENT_ID',
+                                    clientSecretVariable: 'CLIENT_SECRET',
+                                    tenantIdVariable: 'TENANT_ID')])  { 
           ansiColor('xterm') {
             'terraform apply -auto-approve'
           }
@@ -55,7 +63,11 @@ try {
     // Run terraform show
     stage('show') {
       node {
-        withCredentials([azureServicePrincipal('azurecred')]) { 
+         withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
+                                    subscriptionIdVariable: 'SUBS_ID',
+                                    clientIdVariable: 'CLIENT_ID',
+                                    clientSecretVariable: 'CLIENT_SECRET',
+                                    tenantIdVariable: 'TENANT_ID')])  { 
           ansiColor('xterm') {
             'terraform show'
           }
