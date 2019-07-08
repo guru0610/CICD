@@ -13,9 +13,8 @@ try {
   stage('init') {
     node {
 
-      withCredentials([azureServicePrincipal(credentialsId: 'azurecred',)
-                                     {
-       {
+  withCredentials([azureServicePrincipal('azurecred')]) 
+                                            {
         ansiColor('xterm') {
          'terraform init'
         }
