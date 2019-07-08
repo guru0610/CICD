@@ -13,11 +13,11 @@ try {
   stage('init') {
     node {
 
-      withCredentials([azureServicePrincipal('azurecred')]) 
+      withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
                                     subscriptionIdVariable: 'SUBS_ID',
                                     clientIdVariable: 'CLIENT_ID',
                                     clientSecretVariable: 'CLIENT_SECRET',
-                                    tenantIdVariable: 'TENANT_ID')])
+                                    tenantIdVariable: 'TENANT_ID')]) {
        {
         ansiColor('xterm') {
          'terraform init'
