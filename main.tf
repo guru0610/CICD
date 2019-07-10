@@ -135,6 +135,6 @@ resource "azurerm_container_registry" "acr" {
   resource_group_name      = "ci-cd01"
   location                 = "southeastasia"
   account_tier             = "Standard"
-  account_replication_type = "LRS"
+  account_replication_type = "ZRS"
 
   }
