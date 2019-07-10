@@ -50,7 +50,7 @@ resource "azurerm_subnet" "backend" {
 resource "azurerm_public_ip" "test" {
   name                = "ci-cd01-pip"
   resource_group_name = "ci-cd01"
-  location            = "$southeastasia"
+  location            = "southeastasia"
   allocation_method   = "Dynamic"
 }
 
