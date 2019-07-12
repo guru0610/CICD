@@ -12,3 +12,11 @@ resource "azurerm_resource_group" "cicd" {
     environment = "Production"
   }
 }
+resource "azurerm_resource_group" "cicd03" {
+  name     = "cicd03"
+  location = "southeastasia"
+
+  tags = {
+    environment = "Production"
+  }
+}
