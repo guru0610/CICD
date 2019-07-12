@@ -1,14 +1,6 @@
-provider "azurerm" {
-subscription_id = "0d3a3a2b-2635-4743-84b7-aaa5e69fe5ba"
-client_id = "${var.azure_client_id}"
-client_secret = "${var.azure_client_secret}"
-tenant_id = "0ae51e19-07c8-4e4b-bb6d-648ee58410f4"
+variable "azure_client_id" {
+  description = "Client ID for the Service Principal."
 }
-resource "azurerm_resource_group" "cicd" {
-  name     = "cicd02"
-  location = "southeastasia"
-
-  tags = {
-    environment = "Production"
-  }
+variable "azure_client_secret" {
+  description = "Client Secret for the Service Principal."
 }
