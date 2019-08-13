@@ -44,4 +44,4 @@ resource "azurerm_resource_group" "cicd10" {
   tags = {
     environment = "Production"
   }
-  
+  }
