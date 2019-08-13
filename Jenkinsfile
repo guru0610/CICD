@@ -41,7 +41,7 @@ try {
 
  if (env.BRANCH_NAME == 'master') {
 
-    Run terraform apply
+   // Run terraform apply
  stage('apply') {
      node {
       withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
