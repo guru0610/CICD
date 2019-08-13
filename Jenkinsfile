@@ -41,20 +41,20 @@ try {
 
  if (env.BRANCH_NAME == 'master') {
 
-    //Run terraform apply
- //stage('apply') {
-   //  node {
-     //  withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
-     //                              subscriptionIdVariable: 'SUBS_ID',
-     //                               clientIdVariable: 'CLIENT_ID',
-      //                             clientSecretVariable: 'CLIENT_SECRET',
-      //                              tenantIdVariable: 'TENANT_ID')])  { 
-       //  ansiColor('xterm') {
-    //                 sh 'terraform apply -auto-approve plan.out'
-     //    }
-    //   }
-    //  }
-  //  }
+    Run terraform apply
+ stage('apply') {
+     node {
+      withCredentials([azureServicePrincipal(credentialsId: 'azurecred',
+                                   subscriptionIdVariable: 'SUBS_ID',
+                                    clientIdVariable: 'CLIENT_ID',
+                                   clientSecretVariable: 'CLIENT_SECRET',
+                                    tenantIdVariable: 'TENANT_ID')])  { 
+         ansiColor('xterm') {
+                    sh 'terraform apply -auto-approve plan.out'
+         }
+       }
+      }
+    }
 
     // Run terraform show
     stage('show') {
